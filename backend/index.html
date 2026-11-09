@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Forex Trading Journal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js for Equity Curve -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Forex Trading Journal</h1>
+        <p>Track. Analyse. Improve.</p>
+    </header>
+
+    <main>
+
+        <!-- DASHBOARD -->
+        <section class="dashboard">
+
+            <h2>My Trading Dashboard</h2>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h3>Total Trades</h3>
+                    <p id="totalTrades">0</p>
+                </div>
+
+                <div class="stat">
+                    <h3>Net Profit/Loss</h3>
+                    <p id="netProfit">$0.00</p>
+                </div>
+
+                <div class="stat">
+                    <h3>Win Rate</h3>
+                    <p id="winRate">0%</p>
+                </div>
+
+                <div class="stat">
+                    <h3>Profit Factor</h3>
+                    <p id="profitFactor">0.00</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 1. EQUITY CURVE -->
+        <section class="equity-section">
+
+            <h2>1. Equity Curve</h2>
+
+            <p>
+                Monitor your account growth and
+                trading performance.
+            </p>
+
+            <div class="chart-container">
+                <canvas id="equityChart"></canvas>
+            </div>
+
+        </section>
+
+        <!-- 2. TRADING CALENDAR -->
+        <section class="calendar-section">
+
+            <h2>2. Trading Calendar</h2>
+
+            <p>
+                Monitor your daily trading activity.
+            </p>
+
+            <div id="tradingCalendar">
+                <p>Your trading calendar will appear here.</p>
+            </div>
+
+        </section>
+
+        <!-- 3. PERFORMANCE ANALYTICS -->
+        <section class="analytics-section">
+
+            <h2>3. Performance Analytics</h2>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h3>Winning Trades</h3>
+                    <p id="winningTrades">0</p>
+                </div>
+
+                <div class="stat">
+                    <h3>Losing Trades</h3>
+                    <p id="losingTrades">0</p>
+                </div>
+
+                <div class="stat">
+                    <h3>Average Win</h3>
+                    <p id="averageWin">$0.00</p>
+                </div>
+
+                <div class="stat">
+                    <h3>Average Loss</h3>
+                    <p id="averageLoss">$0.00</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 4. RECORD A TRADE -->
+        <section class="trade-form">
+
+            <h2>4. Record a Trade</h2>
+
+            <form id="tradeForm">
+
+                <label>Currency Pair</label>
+
+                <input
+                    id="pair"
+                    type="text"
+                    placeholder="EURUSD"
+                    required
+                >
+
+                <label>Trade Direction</label>
+
+                <select id="direction">
+                    <option>Buy</option>
+                    <option>Sell</option>
+                </select>
+
+                <label>Entry Price</label>
+
+                <input
+                    id="entry"
+                    type="number"
+                    step="any"
+                    required
+                >
+
+                <label>Exit Price</label>
+
+                <input
+                    id="exit"
+                    type="number"
+                    step="any"
+                    required
+                >
+
+                <label>Profit or Loss ($)</label>
+
+                <input
+                    id="pnl"
+                    type="number"
+                    step="any"
+                    required
+                >
+
+                <label>Trade Date</label>
+
+                <input
+                    id="tradeDate"
+                    type="date"
+                    required
+                >
+
+                <label>Trade Analysis</label>
+
+                <textarea
+                    id="notes"
+                    placeholder="Why did I enter this trade?"
+                ></textarea>
+
+                <button type="submit">
+                    Save Trade
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- 5. TRADE HISTORY -->
+        <section class="history">
+
+            <h2>5. Trade History</h2>
+
+            <div id="tradeList"></div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="app.js"></script>
+
+</body>
+</html>
